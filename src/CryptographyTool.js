@@ -86,7 +86,7 @@ export class CryptographyTool extends React.Component {
   updateCharCount() {
     var count = this.state.encryptedMessage.length;
     this.setState({ encryptedMessageCharCount: count },()=>{
-      this.scrollToBottom();
+      this.scrollToElement(0);
     });
   }
   handleSubmitEncrypt(event) {
@@ -113,7 +113,7 @@ export class CryptographyTool extends React.Component {
       try {
         var decrypted = decrypt(this.state.sPublicKey, this.state.rPrivateKey, b91decoded);
         this.setState({ decryptedMessage: decrypted, decryptedMessageHex: this.toHexString(decrypted) },()=>{
-          this.scrollToBottom();
+          this.scrollToElement(1);
         });
     }
     catch(err) {
@@ -166,9 +166,9 @@ onBlurKey(index, keyLength){
     case 3:this.setState({keyError3:errorMsg});break;
   }
 }
-scrollToBottom() {
-  console.log("Scrolling");
-  this.bottomOfPage.scrollIntoView({ behavior: 'smooth' });
+scrollToElement(el) {
+  if(el==0) this.encryptedMessageRef.scrollIntoView({ behavior: 'smooth' });
+  else this.decryptedMessageRef.scrollIntoView({ behavior: 'smooth' });
 }
   render() {
     return (
@@ -196,7 +196,7 @@ scrollToBottom() {
       </div>
       </div>
         <Tabs defaultIndex={0} onSelect={tabIndex => this.setState({ tabIndex })}>
-    <TabList style={{fontSize:"20px"}}>
+    <TabList style={{fontSize:"15px"}}>
       <Tab>Encrypt</Tab>
       <Tab>Decrypt</Tab>
       <Tab disabled>Bulk Ops</Tab>
@@ -289,11 +289,13 @@ scrollToBottom() {
               Encrypted Message:
           </label>     
           </div>
-          <Textarea className="resizableOutput" onFocus={this.handleFocus} 
+          <div ref={el => { this.encryptedMessageRef = el; }}>
+          <Textarea className="resizableOutput" onFocus={this.handleFocus}
               rows="1"
               maxLength="1048576"
               value={this.state.encryptedMessage}
               readOnly/>
+              </div>
           <div id="wrapper">
             <div id="leftDiv">
             <label className="leftLabelSmall"> RipeMD160:</label><label className="updateabelLabel">{this.state.encryptedMessageDigest}</label>
@@ -405,16 +407,17 @@ scrollToBottom() {
               Decrypted Message:
           </label>
           </div>
-          <Textarea className="resizableOutput" onFocus={this.handleFocus} 
+          <div ref={el => { this.decryptedMessageRef = el; }}>
+          <Textarea className="resizableOutput" onFocus={this.handleFocus}
               rows="1"
               maxLength="524288"
               value={this.state.decryptedMessage}
               readOnly/>
+              </div>
       </div>
       </section>
     </TabPanel>
   </Tabs>
-  <div ref={el => { this.bottomOfPage = el; }} />
       </div>
     );
   }
