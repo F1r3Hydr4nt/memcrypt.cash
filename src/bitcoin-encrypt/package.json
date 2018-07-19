@@ -1,0 +1,69 @@
+{
+  "_from": "bitcoin-encrypt@^1.0.1",
+  "_id": "bitcoin-encrypt@1.0.1",
+  "_inBundle": false,
+  "_integrity": "sha512-IgbHoOTZdZ2er+FTgfHyCOnl3Lh1MHq/aZMtex9KNJPFenX2yvkC214tlepoOEN8+qIkEQc5ah56qTp9h6krQg==",
+  "_location": "/bitcoin-encrypt",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "bitcoin-encrypt@^1.0.1",
+    "name": "bitcoin-encrypt",
+    "escapedName": "bitcoin-encrypt",
+    "rawSpec": "^1.0.1",
+    "saveSpec": null,
+    "fetchSpec": "^1.0.1"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/bitcoin-encrypt/-/bitcoin-encrypt-1.0.1.tgz",
+  "_shasum": "53bb4c7f29e8c12a9c6856f237d8c273ff553179",
+  "_spec": "bitcoin-encrypt@^1.0.1",
+  "_where": "D:\\MemCrypt-v1\\memcrypt",
+  "author": {
+    "name": "Kevin Johnson",
+    "url": "KevinEJohn"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "crypto-browserify": "3.12.0"
+  },
+  "deprecated": false,
+  "description": "Using Bitcoin address key pairs for encrypted messaging",
+  "devDependencies": {
+    "bcoin": "^1.0.0-beta.15",
+    "prettier": "^1.12.1",
+    "tape": "^4.9.0"
+  },
+  "homepage": "https://github.com/kevinejohn/bitcoin-encrypt/",
+  "keywords": [
+    "bitcoin",
+    "messaging",
+    "encrypt",
+    "encrypted",
+    "encryption",
+    "crypto",
+    "cryptography",
+    "bitcore",
+    "bcoin",
+    "address",
+    "decrypt",
+    "private",
+    "key",
+    "public",
+    "btc",
+    "bch",
+    "private-keys"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "bitcoin-encrypt",
+  "scripts": {
+    "prettier": "prettier --write --single-quote --trailing-comma es5 *.js tests/*.js",
+    "test": "tape ./tests/*.js"
+  },
+  "version": "1.0.1"
+}

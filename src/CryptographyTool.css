@@ -1,0 +1,198 @@
+.inner {
+    max-width: 1000px;
+    margin: auto auto;
+    background-color: rgb(27, 27, 27);
+    color: rgb(255, 255, 255);
+    min-width: 240px;
+    color:#00ff73;
+    padding:10px 10px 10px 10px;
+}
+
+.info {
+    margin: auto auto;
+    color: rgb(255, 255, 255);
+    padding:10px 10px 10px 10px;
+    text-align: left;
+}
+.infoBox{
+    border: 1px solid;
+    border-color: #aaa;
+    margin-bottom:20px;
+}
+hr {
+    display: block;
+    margin-bottom: 0.75em;
+    border-bottom: 1px solid #aaa;
+    border-color:rgb(175, 175, 175);
+}
+a, a:visited, a:hover, a:active {
+    color: rgb(0,170,80);
+  }
+#wrapper {
+    height:40px;
+}
+#leftDiv {
+    display: inline-block;
+}
+#rightDiv {
+    vertical-align:top;
+    display: inline-block;
+}
+.leftLabel{
+    text-align: left;
+    display:block;
+}
+.leftLabelSmall{
+    font-size:13px;
+}
+
+.updateabelLabel{
+    text-align: left;
+    font-size: 13px;
+    word-wrap: break-word;
+}
+.copyButton {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    margin: 0 20px;
+    float: right;
+}
+.updateabelLabelWrap{
+    text-align: left;
+    margin: 0 auto;
+    font-size: 10px;
+    max-width: 140px;
+    color: rgb(175, 175, 175);
+    word-wrap: break-word;
+}
+
+label{
+    margin-left: 12px;
+    font-size: 1.5em;
+}
+
+.sectionTitle{
+    color:white;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.keyValueInput{
+    margin: 0 auto;
+    font-size: 14px;
+    min-height: 30px;
+    text-align: left;
+    float:left;
+    margin-left:5%;
+    color: rgb(255, 255, 255);
+    background-color:rgb(0, 0, 0);
+    border:1px solid rgb(75, 75, 75);
+    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 90%;
+}
+.exampleKey{
+    color: rgb(175, 175, 175);
+    font-size: 10px;
+    margin: 5px 12px 5px 12px;
+    text-align: left;
+    display: block;
+    word-wrap: break-word;
+}
+
+.resizableInput{
+    margin:12px 12px 12px 12px;
+    padding:10px 10px 20px 10px;
+    font-size: 14px;
+    min-height: 100px;
+    text-align: left;
+    color: rgb(255, 255, 255);
+    background-color:rgb(0, 0, 0);
+    border:1px solid rgb(75, 75, 75);
+    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+    width: 90%;
+    max-width:90%;
+    min-width:90%;
+    resize: none;
+    overflow: hidden;
+}
+
+.resizableOutput{
+    margin: 0 auto;
+    margin:12px 12px 12px 12px;
+    padding:10px 10px 20px 10px;
+    font-size: 14px;
+    min-height: 40px;
+    text-align: left;
+    color: rgb(255, 255, 255);
+    background-color:rgb(27, 27, 27);
+    border:1px solid rgb(75, 75, 75);
+    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+    width: 90%;
+    max-width:90%;
+    min-width:90%;
+    resize: none;
+    overflow: hidden;
+}
+
+.Button{
+    height:40px;
+    width:160px;
+    text-align: center;
+    font-size: 16px;
+    display:block;
+    font-weight: bold;
+    }
+
+.buttonContainer{
+    margin:20px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    }
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    text-align: left;
+    display: inline-block;
+}
+
+.keyError{
+    display: block;
+    clear:left;
+    padding-top:5px;
+    margin-left:5%;
+    font-weight: bold;
+    color:rgb(255, 41, 41);
+    text-align: left;
+}
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+ 
+    top: 100%;
+    left: 50%; 
+    margin-left: -80px; /* Use half of the width (120/2 = 60), to center the tooltip */
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
