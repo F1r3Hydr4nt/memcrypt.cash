@@ -158,7 +158,7 @@ label{
     font-size: 20px;
     font-weight: bold;
     }
-/* Tooltip container */
+
 .tooltip {
     position: relative;
     text-align: left;
@@ -174,7 +174,7 @@ label{
     color:rgb(255, 41, 41);
     text-align: left;
 }
-/* Tooltip text */
+
 .tooltip .tooltiptext {
     visibility: hidden;
     width: 120px;
@@ -186,13 +186,11 @@ label{
  
     top: 100%;
     left: 50%; 
-    margin-left: -80px; /* Use half of the width (120/2 = 60), to center the tooltip */
-    /* Position the tooltip text - see examples below! */
+    margin-left: -80px;
     position: absolute;
     z-index: 1;
 }
 
-/* Show the tooltip text when you mouse over the tooltip container */
 .tooltip:hover .tooltiptext {
     visibility: visible;
 }
