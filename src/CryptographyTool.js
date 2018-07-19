@@ -233,7 +233,7 @@ scrollToElement(el) {
                 event.stopPropagation();
             }}/>
             {this.state.keyError0 != '' ? <div className="keyError">{this.state.keyError0}</div> : ''}
-              
+            <div style={{display:"inline-block"}}>
             <label className="exampleKey">
               e.g. <u>{egRPublicKey}</u>
           <Checkbox onChange={(event) => {
@@ -242,6 +242,7 @@ scrollToElement(el) {
                 }}
                 style={{display:"none"}}/>
           </label>
+          </div>
           <div className="leftLabel">
             <label>
               Send from Private-Key:
@@ -257,6 +258,7 @@ scrollToElement(el) {
                 event.stopPropagation();
             }}/>
             {this.state.keyError1 != '' ? <div className="keyError">{this.state.keyError1}</div> : ''}
+            <div style={{display:"inline-block"}}>
             <label className="exampleKey">
               e.g. <u>{egSPrivateKey}</u>
           <Checkbox onChange={(event) => {
@@ -265,6 +267,7 @@ scrollToElement(el) {
                 }}
                 style={{display:"none"}}/>
           </label>
+          </div>
           <div className="buttonContainer">
             <Button  variant="contained" color="secondary" className="Button" style={{fontWeight:"bold",fontStyle:"italic"}}  onClick={this.handleSubmitEncrypt}>Encrypt</Button>
           </div>
@@ -357,6 +360,7 @@ scrollToElement(el) {
                 event.stopPropagation();
             }}/>
             {this.state.keyError2 != '' ? <div className="keyError">{this.state.keyError2}</div> : ''}
+            <div style={{display:"inline-block"}}>
                 <label className="exampleKey">
               e.g. <u>{egSPublicKey}</u>
           <Checkbox onChange={(event) => {
@@ -365,6 +369,7 @@ scrollToElement(el) {
                 }}
                 style={{display:"none"}}/>
         </label>
+        </div>
             <div className="leftLabel">
             <label>
               Receiver's Private-Key:
@@ -379,6 +384,7 @@ scrollToElement(el) {
                 event.stopPropagation();
             }}/>
             {this.state.keyError3 != '' ? <div className="keyError">{this.state.keyError3}</div> : ''}
+            <div style={{display:"inline-block"}}>
               <label className="exampleKey">
               e.g. <u>{egRPrivateKey}</u>
           <Checkbox onChange={(event) => {
@@ -387,6 +393,7 @@ scrollToElement(el) {
                 }}
                 style={{display:"none"}}/>
         </label>
+        </div>
               </div>
           <div className="buttonContainer">
             <Button  variant="contained" color="secondary" className="Button" style={{fontWeight:"bold",fontStyle:"italic"}} onClick={this.handleSubmitDecrypt}>Decrypt</Button>
