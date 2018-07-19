@@ -234,7 +234,6 @@ scrollToElement(el) {
             }}/>
             {this.state.keyError0 != '' ? <div className="keyError">{this.state.keyError0}</div> : ''}
               
-<div className="tooltip">
             <label className="exampleKey">
               e.g. <u>{egRPublicKey}</u>
           <Checkbox onChange={(event) => {
@@ -243,8 +242,6 @@ scrollToElement(el) {
                 }}
                 style={{display:"none"}}/>
           </label>
-  <span className="tooltiptext">Use example key</span>
-          </div>
           <div className="leftLabel">
             <label>
               Send from Private-Key:
@@ -260,7 +257,6 @@ scrollToElement(el) {
                 event.stopPropagation();
             }}/>
             {this.state.keyError1 != '' ? <div className="keyError">{this.state.keyError1}</div> : ''}
-<div className="tooltip">
             <label className="exampleKey">
               e.g. <u>{egSPrivateKey}</u>
           <Checkbox onChange={(event) => {
@@ -269,14 +265,12 @@ scrollToElement(el) {
                 }}
                 style={{display:"none"}}/>
           </label>
-  <span className="tooltiptext">Use example key</span>
-          </div>
           <div className="buttonContainer">
             <Button  variant="contained" color="secondary" className="Button" style={{fontWeight:"bold",fontStyle:"italic"}}  onClick={this.handleSubmitEncrypt}>Encrypt</Button>
           </div>
         <br/>
           <div style={{display: this.state.encryptedMessage!='' ? 'block' : 'none' }}>
-          <div style={{clear: "both",overflow:"auto"}}> 
+          <div style={{clear: "both",overflow:"auto"}} ref={el => { this.encryptedMessageRef = el; }}> 
           <CopyToClipboard text={this.state.encryptedMessage} onCopy={this.copyEncryptedMessage}>
           <button className="copyButton"><img src="./copy-icon-white.png" style={{width:"30px",height:"36px"}}/></button>
         </CopyToClipboard>
@@ -284,12 +278,14 @@ scrollToElement(el) {
           </label>  
             <label className="leftLabel">
             &nbsp;
-          </label>     
-            <label style={{display:"hidden"}}className="leftLabel">
+          </label> 
+          <div className="leftLabel">   
+            <label>
               Encrypted Message:
-          </label>     
+              </label>
+          </div>     
           </div>
-          <div ref={el => { this.encryptedMessageRef = el; }}>
+          <div>
           <Textarea className="resizableOutput" onFocus={this.handleFocus}
               rows="1"
               maxLength="1048576"
@@ -361,7 +357,6 @@ scrollToElement(el) {
                 event.stopPropagation();
             }}/>
             {this.state.keyError2 != '' ? <div className="keyError">{this.state.keyError2}</div> : ''}
-<div className="tooltip">
                 <label className="exampleKey">
               e.g. <u>{egSPublicKey}</u>
           <Checkbox onChange={(event) => {
@@ -370,8 +365,6 @@ scrollToElement(el) {
                 }}
                 style={{display:"none"}}/>
         </label>
-  <span className="tooltiptext">Use example key</span>
-        </div>
             <div className="leftLabel">
             <label>
               Receiver's Private-Key:
@@ -386,7 +379,6 @@ scrollToElement(el) {
                 event.stopPropagation();
             }}/>
             {this.state.keyError3 != '' ? <div className="keyError">{this.state.keyError3}</div> : ''}
-<div className="tooltip">
               <label className="exampleKey">
               e.g. <u>{egRPrivateKey}</u>
           <Checkbox onChange={(event) => {
@@ -395,19 +387,17 @@ scrollToElement(el) {
                 }}
                 style={{display:"none"}}/>
         </label>
-  <span className="tooltiptext">Use example key</span>
-              </div>
               </div>
           <div className="buttonContainer">
             <Button  variant="contained" color="secondary" className="Button" style={{fontWeight:"bold",fontStyle:"italic"}} onClick={this.handleSubmitDecrypt}>Decrypt</Button>
           </div>
           <div style={{display: this.state.decryptedMessage!='' ? 'block' : 'none' }}>
-          <div className="leftLabel">
+          <div className="leftLabel" ref={el => { this.decryptedMessageRef = el; }}>
             <label>
               Decrypted Message:
           </label>
           </div>
-          <div ref={el => { this.decryptedMessageRef = el; }}>
+          <div>
           <Textarea className="resizableOutput" onFocus={this.handleFocus}
               rows="1"
               maxLength="524288"
