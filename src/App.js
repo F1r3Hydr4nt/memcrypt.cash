@@ -8,7 +8,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
         <meta charSet="utf-8" /> 
-          <h1 className="App-title">MemCrypt.cash</h1>
+          <h1 className="App-title">Memcrypt.cash</h1>
         </header>
         <div>
           <CryptographyTool/>

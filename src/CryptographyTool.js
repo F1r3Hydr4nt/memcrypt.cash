@@ -303,7 +303,7 @@ scrollToElement(el) {
             <label className="leftLabelSmall"> Characters:</label><label className="updateabelLabel">{this.state.encryptedMessageCharCount}</label>
             </div>
           </div>
-          {this.state.encryptedMessageCharCount > 217 ? <div className="keyError">This message is too long to be sent on memo as it is longer than 217 characters. However, if it is close, try encrypt again as the random IV can induce a shorter message length.
+          {this.state.encryptedMessageCharCount > 217 ? <div className="keyError" style={{marginTop:"10px"}}>This message is too long to be sent on memo as it is longer than 217 characters. However, if it is close, try encrypt again as the random IV can induce a shorter message length.
           <br/>
           <br/>
           <div style={{color:"white",fontWeight:"normal"}}>
