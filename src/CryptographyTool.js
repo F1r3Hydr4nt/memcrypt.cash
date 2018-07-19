@@ -127,10 +127,10 @@ export class CryptographyTool extends React.Component {
     event.target.select();
 }
 handleChangeChk(index) {
-  if(index==0&&this.state.rPublicKey==''){this.setState({rPublicKey:egRPublicKey});this.keyInput0.focus();}
-  if(index==1&&this.state.sPrivateKey==''){this.setState({sPrivateKey:egSPrivateKey});this.keyInput1.focus();}
-  if(index==2&&this.state.sPublicKey==''){this.setState({sPublicKey:egSPublicKey});this.keyInput2.focus();}
-  if(index==3&&this.state.rPrivateKey==''){this.setState({rPrivateKey:egRPrivateKey});this.keyInput3.focus();}
+  if(index==0&&this.state.rPublicKey==''){this.setState({rPublicKey:egRPublicKey});this.keyInput0.blur();}
+  if(index==1&&this.state.sPrivateKey==''){this.setState({sPrivateKey:egSPrivateKey});this.keyInput1.blur();}
+  if(index==2&&this.state.sPublicKey==''){this.setState({sPublicKey:egSPublicKey});this.keyInput2.blur();}
+  if(index==3&&this.state.rPrivateKey==''){this.setState({rPrivateKey:egRPrivateKey});this.keyInput3.blur();}
 }
 handleChangeHexBox() {
   if(this.state.decryptedMessageHex!=''){
