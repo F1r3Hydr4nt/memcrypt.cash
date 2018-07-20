@@ -90,11 +90,11 @@ export class CryptographyTool extends React.Component {
     });
   }
   handleSubmitEncrypt(event) {
-    if (this.state.keyError0 == '' && this.state.keyError1 == '' && this.state.rPublicKey!='' && this.state.sPrivateKey!='') {
+  if (this.isHexadecimal(this.state.rPublicKey)&&this.state.rPublicKey.length==66&&this.isHexadecimal(this.state.sPrivateKey)&&this.state.sPrivateKey.length==64){
       var fullMessage = this.state.messageToEncrypt;
       var encrypted = encrypt(this.state.rPublicKey, this.state.sPrivateKey, fullMessage);
       var b91encoded = base91.encode(encrypted);
-      this.setState({ encryptedMessage: b91encoded }, () => {
+      this.setState({ encryptedMessage: b91encoded,keyError0:'',keyError1:''}, () => {
         this.updateEncryptedMessageDigest();
       });
     }
@@ -107,12 +107,12 @@ export class CryptographyTool extends React.Component {
   });
   }
   handleSubmitDecrypt(event) {
-    if (this.state.keyError2 == '' && this.state.keyError3 == '' && this.state.sPublicKey!='' && this.state.rPrivateKey!='') {
+    if (this.isHexadecimal(this.state.sPublicKey)&&this.state.sPublicKey.length==66&&this.isHexadecimal(this.state.rPrivateKey)&&this.state.rPrivateKey.length==64){  
       var fullMessage = this.state.messageToDecrypt;
       var b91decoded = base91.decode(fullMessage, 'utf8');
       try {
         var decrypted = decrypt(this.state.sPublicKey, this.state.rPrivateKey, b91decoded);
-        this.setState({ decryptedMessage: decrypted, decryptedMessageHex: this.toHexString(decrypted) },()=>{
+        this.setState({ decryptedMessage: decrypted, decryptedMessageHex: this.toHexString(decrypted),keyError2:'',keyError3:''},()=>{
           this.scrollToElement(1);
         });
     }
