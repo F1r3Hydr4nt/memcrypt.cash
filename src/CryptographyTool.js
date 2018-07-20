@@ -235,7 +235,7 @@ scrollToElement(el) {
             {this.state.keyError0 != '' ? <div className="keyError">{this.state.keyError0}</div> : ''}
             <div style={{display:"inline-block"}}>
             <label className="exampleKey">
-              e.g. <u>{egRPublicKey}</u>
+              e.g.<u>{egRPublicKey}</u>
           <Checkbox onChange={(event) => {
                     this.handleChangeChk(0);
                     event.stopPropagation();
@@ -260,7 +260,7 @@ scrollToElement(el) {
             {this.state.keyError1 != '' ? <div className="keyError">{this.state.keyError1}</div> : ''}
             <div style={{display:"inline-block"}}>
             <label className="exampleKey">
-              e.g. <u>{egSPrivateKey}</u>
+              e.g.<u>{egSPrivateKey}</u>
           <Checkbox onChange={(event) => {
                     this.handleChangeChk(1);
                     event.stopPropagation();
@@ -362,7 +362,7 @@ scrollToElement(el) {
             {this.state.keyError2 != '' ? <div className="keyError">{this.state.keyError2}</div> : ''}
             <div style={{display:"inline-block"}}>
                 <label className="exampleKey">
-              e.g. <u>{egSPublicKey}</u>
+              e.g.<u>{egSPublicKey}</u>
           <Checkbox onChange={(event) => {
                     this.handleChangeChk(2);
                     event.stopPropagation();
@@ -386,7 +386,7 @@ scrollToElement(el) {
             {this.state.keyError3 != '' ? <div className="keyError">{this.state.keyError3}</div> : ''}
             <div style={{display:"inline-block"}}>
               <label className="exampleKey">
-              e.g. <u>{egRPrivateKey}</u>
+              e.g.<u>{egRPrivateKey}</u>
           <Checkbox onChange={(event) => {
                     this.handleChangeChk(3);
                     event.stopPropagation();
