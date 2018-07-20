@@ -303,11 +303,11 @@ scrollToElement(el) {
             <label className="leftLabelSmall"> Characters:</label><label className="updateabelLabel">{this.state.encryptedMessageCharCount}</label>
             </div>
           </div>
-          {this.state.encryptedMessageCharCount > 217 ? <div className="keyError" style={{marginTop:"10px"}}>This message is too long to be sent on memo as it is longer than 217 characters. However, if it is close, try encrypt again as the random IV can induce a shorter message length.
+          {this.state.encryptedMessageCharCount > 203 ? <div className="keyError" style={{marginTop:"10px"}}>This message is too long to be posted to the '?' memo topic as it is longer than 203 characters. However, if it is close, try encrypt again as the random IV can induce a shorter message length.
           <br/>
           <br/>
           <div style={{color:"white",fontWeight:"normal"}}>
-          You should post this <u>encrypted message</u> online* and then combine that link with <u>this</u> encrypted message's RipeMD160 identifier shown above (e.g. "paste.site/linkurl {this.state.encryptedMessageDigest}") then encrypt <u>that</u> message and post it on memo.
+          You should post the <u>encrypted text</u> online somewhere* and then combine a link to it with <u>this</u> encrypted message's RipeMD160 identifier shown above (e.g. "paste.site/xxxxx {this.state.encryptedMessageDigest}") and encrypt <u>that</u> to post to memo.
           <br/>          <br/>
           * e.g. <a href="https://pastebin.com"target="_blank">Pastebin</a>
           , <a href="https://hastebin.com"target="_blank">Hastebin</a>
