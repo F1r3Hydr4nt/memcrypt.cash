@@ -39,7 +39,8 @@ export class CryptographyTool extends React.Component {
       keyError1:'',
       keyError2:'',
       keyError3:'',
-      infoToggled:false
+      infoToggled:false,
+      encryptButtonEnabled:true
     };
     this.handleChangeRecipientsPublicKey = this.handleChangeRecipientsPublicKey.bind(this);
     this.handleChangeRecipientsPrivateKey = this.handleChangeRecipientsPrivateKey.bind(this);
@@ -83,10 +84,23 @@ export class CryptographyTool extends React.Component {
     var digest = new RIPEMD160().update(this.state.messageToDecrypt).digest('hex');
     this.setState({ messageToDecryptDigest: digest });
   }
+  reEnableEncryptButton(){
+    this.setState({encryptButtonEnabled:true});
+  }
   updateCharCount() {
     var count = this.state.encryptedMessage.length;
     this.setState({ encryptedMessageCharCount: count },()=>{
-      this.scrollToElement(0);
+      if(this.state.encryptedMessageCharCount<=203){
+              this.setState({encryptButtonEnabled:false});
+              this.scrollToElement(0);
+        setTimeout(
+          function() {
+            this.reEnableEncryptButton()
+          }
+          .bind(this),
+          1500
+        )
+      }
     });
   }
   handleSubmitEncrypt(event) {
@@ -269,7 +283,7 @@ scrollToElement(el) {
           </label>
           </div>
           <div className="buttonContainer">
-            <Button  variant="contained" color="secondary" className="Button" style={{fontWeight:"bold",fontStyle:"italic"}}  onClick={this.handleSubmitEncrypt}>Encrypt</Button>
+            <Button disabled = {!this.state.encryptButtonEnabled} variant="contained" color="secondary" className="Button" style={{fontWeight:"bold",fontStyle:"italic"}}  onClick={this.handleSubmitEncrypt}>Encrypt</Button>
           </div>
         <br/>
           <div style={{display: this.state.encryptedMessage!='' ? 'block' : 'none' }}>
