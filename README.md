@@ -6,3 +6,5 @@ Installing, running & building instructions.
 4. To build a production package run: 'npm run build'
 
 Any pull requests welcome.
+
+Check the website out at "https://www.memcrypt.cash"
