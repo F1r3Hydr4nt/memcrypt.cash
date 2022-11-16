@@ -11,7 +11,7 @@
     "react-copy-to-clipboard": "^5.0.1",
     "react-dom": "^16.13.1",
     "react-expanding-textarea": "^0.1.10",
-    "react-scripts": "1.1.4",
+    "react-scripts": "5.0.1",
     "react-tabs": "^2.2.2",
     "react-toggle-button": "^2.2.0"
   },
